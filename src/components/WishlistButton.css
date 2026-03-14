@@ -1,0 +1,62 @@
+/* WishlistButton styles */
+
+.wishlist-btn {
+    background: rgba(255, 255, 255, 0.88);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted, #999);
+    transition: color 0.25s ease, background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    backdrop-filter: blur(4px);
+    flex-shrink: 0;
+}
+
+/* Size variants */
+.wishlist-btn--md {
+    width: 36px;
+    height: 36px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.wishlist-btn--md svg {
+    width: 18px;
+    height: 18px;
+}
+
+.wishlist-btn--sm {
+    width: 28px;
+    height: 28px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.wishlist-btn--sm svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* Hover */
+.wishlist-btn:hover {
+    color: var(--primary-color, #8e5d61);
+    background: #fff;
+    transform: scale(1.12);
+    box-shadow: 0 4px 14px rgba(142, 93, 97, 0.22);
+}
+
+/* Active/wishlisted state */
+.wishlist-btn.wishlisted {
+    color: var(--primary-color, #8e5d61);
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(142, 93, 97, 0.28);
+}
+
+.wishlist-btn.wishlisted:hover {
+    color: #c0392b;
+}
+
+/* Pop animation on toggle */
+.wishlist-btn:active {
+    transform: scale(0.92);
+}

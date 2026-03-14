@@ -1,0 +1,124 @@
+.product-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    animation: scaleIn 0.8s ease-out;
+}
+
+/* Tag badge (e.g. "Sale", "New", "Hot") */
+.card-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    background: var(--primary-color, #8e5d61);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* Wishlist button — top-right corner of image */
+.card-wishlist-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 3;
+}
+
+.card-image-wrapper {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    background-color: var(--bg-soft);
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(142, 93, 97, 0.2);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.quick-view {
+    padding: 14px 30px;
+    background: white;
+    color: var(--primary-color);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card:hover .card-image {
+    transform: scale(1.1);
+}
+
+.product-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.product-card:hover .quick-view {
+    transform: translateY(0);
+}
+
+.card-info {
+    padding-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+}
+
+.card-category {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.card-name {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.card-name:hover {
+    color: var(--primary-color);
+}
+
+.card-price {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-color);
+}

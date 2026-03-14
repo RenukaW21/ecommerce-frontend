@@ -1,0 +1,347 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ORDER CONFIRMATION PAGE — Premium Couture Style
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.oc-page {
+    background: var(--bg-pure);
+    min-height: 100vh;
+    padding: 60px 24px 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.oc-container {
+    max-width: 560px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    animation: fadeInUp 0.7s ease-out;
+}
+
+/* ── Animated Checkmark ── */
+.oc-check-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.oc-check-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f9f1f2, #f4e8e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 36px rgba(142, 93, 97, 0.18);
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.oc-checkmark {
+    width: 52px;
+    height: 52px;
+}
+
+.oc-check-bg {
+    stroke: var(--primary-color);
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: oc-stroke 0.8s cubic-bezier(0.65, 0, 0.45, 1) 0.2s forwards;
+}
+
+.oc-check-tick {
+    stroke: var(--primary-color);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: oc-stroke 0.4s cubic-bezier(0.65, 0, 0.45, 1) 0.9s forwards;
+}
+
+@keyframes oc-stroke {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ── Heading Text ── */
+.oc-text {
+    text-align: center;
+}
+
+.oc-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--primary-color);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 12px 0;
+}
+
+.oc-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    letter-spacing: 0.3px;
+}
+
+/* ── Order Card ── */
+.oc-card {
+    width: 100%;
+    background: var(--accent-pastel);
+    border: 1px solid #e8dede;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(142, 93, 97, 0.08);
+}
+
+.oc-card-header {
+    background: var(--primary-color);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.oc-order-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.oc-order-id {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.oc-details {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.oc-detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+}
+
+.oc-dl {
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.oc-dv {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.oc-free {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.oc-divider {
+    height: 1px;
+    background: #e0d8d8;
+    margin: 4px 0;
+}
+
+.oc-total-row {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.oc-total-val {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.oc-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #fef9e7;
+    color: #d68910;
+    border: 1px solid #f8d67a;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* ── What's Next Section ── */
+.oc-next {
+    width: 100%;
+    background: #fdfafa;
+    border: 1px solid var(--accent-pastel);
+    border-radius: 6px;
+    padding: 24px;
+}
+
+.oc-next-title {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin: 0 0 20px 0;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--accent-pastel);
+}
+
+.oc-steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+}
+
+.oc-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    text-align: center;
+}
+
+.oc-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.oc-step-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.oc-step-info strong {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.3px;
+}
+
+.oc-step-info span {
+    font-size: 11px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.oc-step-connector {
+    flex: 0 0 40px;
+    height: 2px;
+    background: var(--accent-pastel);
+    margin-top: 15px;
+    border-top: 2px dashed #d0c5c5;
+    border-radius: 0;
+}
+
+/* ── Action Buttons ── */
+.oc-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.oc-btn-primary {
+    display: block;
+    text-align: center;
+    padding: 15px 24px;
+    background-color: var(--primary-color);
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.oc-btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(142, 93, 97, 0.25);
+}
+
+.oc-btn-outline {
+    display: block;
+    text-align: center;
+    padding: 13px 24px;
+    border: 1px solid #d0c5c5;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.oc-btn-outline:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .oc-page {
+        padding: 40px 16px 80px;
+    }
+
+    .oc-title {
+        font-size: 24px;
+    }
+
+    .oc-steps {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .oc-step {
+        flex-direction: row;
+        text-align: left;
+        gap: 14px;
+    }
+
+    .oc-step-connector {
+        width: 2px;
+        height: 20px;
+        flex: 0 0 auto;
+        border-top: none;
+        border-left: 2px dashed #d0c5c5;
+        margin-top: 0;
+        margin-left: 15px;
+    }
+}

@@ -1,0 +1,112 @@
+.auth-page-wrapper {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, var(--bg-soft) 0%, var(--accent-pastel) 100%);
+    padding: 60px 20px;
+}
+
+.auth-container {
+    background: var(--bg-pure);
+    width: 100%;
+    max-width: 450px;
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 30px 60px rgba(142, 93, 97, 0.08);
+    animation: scaleIn 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    text-align: center;
+}
+
+.auth-container h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.auth-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(142, 93, 97, 0.1);
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    background-color: var(--bg-soft);
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background: white;
+    box-shadow: 0 4px 15px rgba(142, 93, 97, 0.05);
+}
+
+.auth-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-top: 15px;
+    box-shadow: 0 10px 25px rgba(142, 93, 97, 0.15);
+}
+
+.auth-btn:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(142, 93, 97, 0.25);
+}
+
+.error-message {
+    background-color: #F8D7DA;
+    color: #721C24;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    margin-bottom: 25px;
+    border: 1px solid #F5C6CB;
+}
+
+.auth-footer {
+    margin-top: 35px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--primary-color);
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
