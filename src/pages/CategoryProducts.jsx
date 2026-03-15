@@ -18,13 +18,15 @@ const CategoryProducts = () => {
             try {
                 // Fetch all categories and find the current one
                 const catRes = await getCategories();
-                const cats = Array.isArray(catRes.data) ? catRes.data : (catRes.data.data || []);
+                // const cats = Array.isArray(catRes.data) ? catRes.data : (catRes.data.data || []);
+                const cats = catRes.data.data || [];
                 const currentCat = cats.find(c => String(c.id || c.category_id) === String(id));
                 setCategory(currentCat);
 
                 // Fetch products for this category
                 const prodRes = await getProducts({ category_id: id });
-                setProducts(Array.isArray(prodRes.data) ? prodRes.data : (prodRes.data.data || []));
+                // setProducts(Array.isArray(prodRes.data) ? prodRes.data : (prodRes.data.data || []));
+                setProducts(prodRes.data.data || []);
             } catch (err) {
                 setError("Failed to load collection.");
             } finally {
@@ -43,7 +45,11 @@ const CategoryProducts = () => {
             <header className="category-header-banner">
                 <div className="container">
                     <Link to="/categories" className="back-link">← ALL COLLECTIONS</Link>
-                    <h1 className="category-title">{category?.name || "Collection"}</h1>
+                    {/* <h1 className="category-title">{category?.name || "Collection"}</h1> */}
+
+                    <h1 className="category-title">
+  {category?.category_name || "Collection"}
+</h1>
                     <p className="category-subtitle">
                         {products.length} {products.length === 1 ? 'Piece' : 'Pieces'} Curated
                     </p>

@@ -29,7 +29,9 @@ const Categories = () => {
         const fetchCategories = async () => {
             try {
                 const res = await getCategories();
-                const data = Array.isArray(res.data) ? res.data : (res.data.data || []);
+                // const data = Array.isArray(res.data) ? res.data : (res.data.data || []);
+
+                const data = res.data.data || [];
                 setCategories(data);
             } catch (err) {
                 setError("Failed to curate categories.");

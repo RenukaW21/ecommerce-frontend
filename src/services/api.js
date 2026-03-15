@@ -2,7 +2,7 @@ import axios from 'axios';
 import BASE_URL from '../config/config';
 
 export const IMAGE_BASE_URL =
-  'http://localhost/fullstack/backend_project/uploads/';
+  'https://classic-couture-ecommerce.infinityfreeapp.com/backend_project/uploads/';
 
 const api = axios.create({
   baseURL: BASE_URL,
